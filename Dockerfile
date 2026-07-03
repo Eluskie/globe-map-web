@@ -15,7 +15,7 @@ ENV VITE_MAPBOX_TOKEN=$VITE_MAPBOX_TOKEN
 
 RUN npm run build
 
-FROM nginx:1.27-alpine AS runner
+FROM nginx:1.27-alpine AS production
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
