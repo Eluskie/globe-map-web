@@ -1,0 +1,135 @@
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #dfe3ea;
+}
+
+.setup-screen {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #111;
+  background: #f4f6f9;
+  text-align: center;
+}
+
+.view-toggle {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(20, 24, 40, 0.78);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.view-toggle:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.tag-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(-4px);
+  transition: transform 150ms ease;
+}
+
+.tag-marker:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.tag-marker__icon {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  background: rgba(12, 16, 32, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: 1.1rem;
+}
+
+.tag-marker__label {
+  max-width: 8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(12, 16, 32, 0.78);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag-card {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  width: min(320px, calc(100vw - 48px));
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 16, 32, 0.86);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.tag-card__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tag-card__eyebrow {
+  margin: 0 0 0.35rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.8rem;
+}
+
+.tag-card__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.tag-card__description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .tag-card {
+    top: auto;
+    bottom: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
