@@ -12,8 +12,9 @@ function MissingTokenScreen() {
     <main className="setup-screen">
       <h1>Mapbox token required</h1>
       <p>
-        Copy <code>.env.example</code> to <code>.env</code> and set{" "}
-        <code>VITE_MAPBOX_TOKEN</code>.
+        Set <code>VITE_MAPBOX_TOKEN</code> in Dokploy environment variables, then
+        redeploy. For local dev, copy <code>.env.example</code> to{" "}
+        <code>.env</code>.
       </p>
     </main>
   );
